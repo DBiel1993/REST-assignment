@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colorado Fourteeners</title>
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="images/image_2.png" type="image/x-icon" />
+    <meta property="og:image" content="images/image_2" />
+
+    <style>
+      /* Specific image styling */
+      
+      .distance-btn-container {
+        display: flex;
+        justify-content: center;
+      }
+      .distance-btn {
+        background-color: #007bff;
+        color: #ffffff;
+        font-size: large;
+        font-weight: bold;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 0;
+        cursor: pointer;
+        display: block;
+        height: 50px;
+        width: 100%;
+        margin-top: 3.5rem;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      }
+
+ 
+      .forecast-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        z-index: 999999;
+      }
+      .forecast-item {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color 0.3s ease;
+      }
+      .forecast-item:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+      .forecast-item .day {
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+      .forecast-item .temperature {
+        font-size: 1.5em;
+        color: white;
+      }
+      #map {
+        height: 500px;
+        width: 500px;
+        margin-top: 300px;
+        margin-right: 30px;
+        margin-left: 730px;
+        border-radius: 60px;
+       
+      }
+
+     
+    </style>
+
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEItZGiJhcIiIWB3N9YvFE6IsmbipAd9U&callback=initMap&libraries=&v=weekly&loading=async"
+    ></script>
+    <script>
+      function initMap() {
+        const myLatLng = { lat: 39.15216, lng: -106.41235 };
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 14,
+          center: myLatLng,
+        });
+        new google.maps.Marker({
+          position: myLatLng,
+          map,
+          title: "Quandary Peak",
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <a href="index.html">
+          <img
+            src="images/image_2.png"
+            alt="Colorado Fourteeners Logo"
+            class="logo"
+          />
+        </a>
+        <h6 id="h6">Colorado Fourteeners</h6>
+        <nav>
+          <ul id="nav-menu">
+            <li><a href="nav-pages/marketplace.html"></a></li>
+            <li><a href="nav-pages/dashboard.html"></a></li>
+            <li><a href="nav-pages/Local.html"></a></li>
+            <li><a href="Page_coming_soon.html"></a></li>
+            <li><a href="Page_coming_soon.html"></a></li>
+            <li><a href="Page_coming_soon.html"></a></li>
+            <li><a href="Page_coming_soon.html"></a></li>
+            <li><a href="nav-pages/login.html"></a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section>
+      <main>
+        <img
+          id="img1"
+          src="images/image_1.png"
+          alt="Colorado Fourteeners"
+        />
+        
+        
+      </main>
+    </section>
+    
+    <div class="container" id="welcome">
+      <h2>Welcome to Colorado Fourteeners</h2>
+      <p>
+        Welcome to Colorado Fourteeners, your ultimate guide to the majestic
+        peaks of Colorado that soar over 14,000 feet. Our mission is to provide
+        comprehensive information about these incredible mountains, from their
+        historical significance to the best hiking routes. Whether you're a
+        seasoned mountaineer or a curious adventurer, our goal is to inspire and
+        equip you with the knowledge you need to explore these natural wonders
+        safely and enjoyably. Join our community of outdoor enthusiasts and
+        discover the breathtaking beauty and challenges of Colorado's highest
+        summits. Let's embark on this adventure together!
+      </p>
+    </div>
+   
+    <section id="intro"></section>
+    <section id="featured-peaks">
+
+          </div>
+          <div id="map"></div>
+         
+      
+            <h1 id="move-map">Drag and drop the little yellow figure</h1>
+        
+      
+            
+      
+        </section>
+       
+        <section class="peak-table" id="peak-table">
+             
+            <tbody>
+              <table>
+                <tr>
+                  <th>Peak</th>
+                  <th>Elevation</th>
+                  <th>Difficulty</th>
+                  <th>Range</th>
+                  <th>More Info</th>
+                </tr>
+                <tr>
+                  <td>Mount Elbert</td>
+                  <td>14,440'</td>
+                  <td>Class 1</td>
+                  <td>Sawatch</td>
+                  <td><a href="mount-elbert.html">More Info</a></td>
+                </tr>
+                <tr>
+                  <td>Mount Massive</td>
+                  <td>14,429'</td>
+                  <td>Class 2</td>
+                  <td>Sawatch</td>
+                  <td><a href="mount-massive.html">More Info</a></td>
+                </tr>
+                <tr>
+                  <td>Mount Harvard</td>
+                  <td>14,421'</td>
+                  <td>Class 2</td>
+                  <td>Sawatch</td>
+                  <td><a href="mount-harvard.html">More Info</a></td>
+                </tr>
+                <tr>
+                  <td>Blanca Peak</td>
+                  <td>14,351'</td>
+                  <td>Class 2</td>
+                  <td>Sangre de Cristo</td>
+                  <td><a href="nav-pages/peaks/blanca-peak.html">More Info</a></td>
+                </tr>
+                <tr>
+                  <td>La Plata Peak</td>
+                  <td>14,343'</td>
+                  <td>Class 2</td>
+                  <td>Sawatch</td>
+                  <td><a href="nav-pages/peaks/la-plata-peak.html">More Info</a></td>
+                </tr>
+                <tr>
+                  <td>Uncompahgre Peak</td>
+                  <td>14,321'</td>
+                  <td>Class 2</td>
+                  <td>San Juan</td>
+                  <td><a href="nav-pages/peaks/uncompahgre-peak.html">More Info</a></td>
+                </tr>
+                <tr>
+                  <td>Crestone Peak</td>
+                  <td>14,300'</td>
+                  <td>Class 3</td>
+                  <td>Sangre de Cristo</td>
+                  <td><a href="nav-pages/peaks/crestone-peak.html">More Info</a></td>
+                </tr>
+                <tr>
+                  <td>Mount Lincoln</td>
+                  <td>14,293'</td>
+                  <td>Class 2</td>
+                  <td>Tenmile-Mosquito</td>
+                  <td><a href="nav-pages/peaks/mount-lincoln.html">More Info</a></td>
+                </tr>
+                <tr>
+                  <td>Castle Peak</td>
+                  <td>14,279'</td>
+                  <td>Class 2</td>
+                  <td>Elk</td>
+                  <td><a href="nav-pages/peaks/castle-peak.html">More Info</a></td>
+                </tr>
+                <tr>
+                  <td>Grays Peak</td>
+                  <td>14,278'</td>
+                  <td>Class 1</td>
+                  <td>Front</td>
+                  <td><a href="nav-pages/peaks/grays-peak.html">More Info</a></td>
+                </tr>
+                <tr>
+                  <td>Mount Antero</td>
+                  <td>14,276'</td>
+                  <td>Class 2</td>
+                  <td>Sawatch</td>
+                  <td><a href="nav-pages/peaks/mount-antero.html">More Info</a></td>
+                </tr>
+                <tr>
+                  <td>Quandary Peak</td>
+                  <td>14,271'</td>
+                  <td>Class 1</td>
+                  <td>Tenmile-Mosquito</td>
+                  <td><a href="quandary-peak.html">More Info</a></td>
+                </tr>
+                <tr>
+                  <td>Mount Evans</td>
+                  <td>14,271'</td>
+                  <td>Class 2</td>
+                  <td>Front</td>
+                  <td><a href="nav-pages/peaks/mount-evans.html">More Info</a></td>
+                </tr>
+                <tr>
+                  <td>Longs Peak</td>
+                  <td>14,259'</td>
+                  <td>Class 3</td>
+                  <td>Front</td>
+                  <td><a href="nav-pages/peaks/longs-peak.html">More Info</a></td>
+                </tr>
+                <tr>
+                  <td>Mount Wilson</td>
+                  <td>14,246'</td>
+                  <td>Class 3</td>
+                  <td>San Juan</td>
+                  <td><a href="nav-pages/peaks/mount-wilson.html">More Info</a></td>
+                </tr>
+                <tr>
+                  <td>Mount Cameron</td>
+                  <td>14,238'</td>
+                  <td>Class 2</td>
+                  <td>Tenmile-Mosquito</td>
+                  <td><a href="nav-pages/peaks/mount-cameron.html">More Info</a></td>
+                </tr>
+                <tr>
+                  <td>Mount Shavano</td>
+                  <td>14,229'</td>
+                  <td>Class 2</td>
+                  <td>Sawatch</td>
+                  <td><a href="nav-pages/peaks/mount-shavano.html">More Info</a></td>
+                </tr>
+                <tr>
+                  <td>Mount Princeton</td>
+                  <td>14,204'</td>
+                  <td>Class 2</td>
+                  <td>Sawatch</td>
+                  <td><a href="nav-pages/peaks/mount-princeton.html">More Info</a></td>
+                </tr>
+                <tr>
+                  <td>Mount Belford</td>
+                  <td>14,197'</td>
+                  <td>Class 2</td>
+                  <td>Sawatch</td>
+                  <td><a href="nav-pages/peaks/mount-belford.html">More Info</a></td>
+                </tr>
+                <tr>
+                  <td>Mount Yale</td>
+                  <td>14,196'</td>
+                  <td>Class 2</td>
+                  <td>Sawatch</td>
+                  <td><a href="nav-pages/peaks/mount-yale.html">More Info</a></td>
+                </tr>
+                <tr>
+                  <td>Mount Bross</td>
+                  <td>14,172'</td>
+                  <td>Class 2</td>
+                  <td>Tenmile-Mosquito</td>
+                  <td><a href="nav-pages/peaks/mount-bross.html">More Info</a></td>
+                </tr>
+                <tr>
+                  <td>Kit Carson Peak</td>
+                  <td>14,165'</td>
+                  <td>Class 3</td>
+                  <td>Sangre de Cristo</td>
+                  <td><a href="nav-pages/peaks/kit-carson-peak.html">More Info</a></td>
+                </tr>
+                <tr>
+                  <td>El Diente Peak</td>
+                  <td>14,159'</td>
+                  <td>Class 3</td>
+                  <td>San Juan</td>
+                  <td><a href="nav-pages/peaks/el-diente-peak.html">More Info</a></td>
+                </tr>
+                <tr>
+                  <td>Maroon Peak</td>
+                  <td>14,163'</td>
+                  <td>Class 3</td>
+                  <td>Elk</td>
+                  <td><a href="nav-pages/peaks/maroon-peak.html">More Info</a></td>
+                </tr>
+                <tr>
+                  <td>Tabeguache Peak</td>
+                  <td>14,155'</td>
+                  <td>Class 2</td>
+                  <td>Sawatch</td>
+                  <td><a href="nav-pages/peaks/tabeguache-peak.html">More Info</a></td>
+                </tr>
+                <tr>
+                  <td>Mount Oxford</td>
+                  <td>14,153'</td>
+                  <td>Class 2</td>
+                  <td>Sawatch</td>
+                  <td><a href="nav-pages/peaks/mount-oxford.html">More Info</a></td>
+                </tr>
+                <tr>
+                  <td>Mount Sneffels</td>
+                  <td>14,150'</td>
+                  <td>Class 3</td>
+                  <td>San Juan</td>
+                  <td><a href="nav-pages/peaks/mount-sneffels.html">More Info</a></td>
+                </tr>
+                <tr>
+                <td>Mount Democrat</td>
+                <td>14,148'</td>
+                <td>Class 2</td>
+                <td>Tenmile-Mosquito</td>
+                <td><a href="nav-pages/peaks/mount-democrat.html">More Info</a></td>
+              </tr>
+              <tr>
+                <td>Capitol Peak</td>
+                <td>14,137'</td>
+                <td>Class 4</td>
+                <td>Elk</td>
+                <td><a href="nav-pages/peaks/capitol-peak.html">More Info</a></td>
+              </tr>
+              <tr>
+                <td>Pikes Peak</td>
+                <td>14,115'</td>
+                <td>Class 1</td>
+                <td>Front</td>
+                <td><a href="nav-pages/peaks/pikes-peak.html">More Info</a></td>
+              </tr>
+              <tr>
+                <td>Snowmass Mountain</td>
+                <td>14,099'</td>
+                <td>Class 3</td>
+                <td>Elk</td>
+                <td><a href="nav-pages/peaks/snowmass-mountain.html">More Info</a></td>
+              </tr>
+              <tr>
+                <td>Windom Peak</td>
+                <td>14,082'</td>
+                <td>Class 2</td>
+                <td>San Juan</td>
+                <td><a href="nav-pages/peaks/windom-peak.html">More Info</a></td>
+              </tr>
+              <tr>
+                <td>San Luis Peak</td>
+                <td>14,014'</td>
+                <td>Class 1</td>
+                <td>San Juan</td>
+                <td><a href="nav-pages/peaks/san-luis-peak.html">More Info</a></td>
+              </tr>
+              <tr>
+                <td>Mount Eolus</td>
+                <td>14,083'</td>
+                <td>Class 3</td>
+                <td>San Juan</td>
+                <td><a href="nav-pages/peaks/mount-eolus.html">More Info</a></td>
+              </tr>
+              <tr>
+                <td>Challenger Point</td>
+                <td>14,081'</td>
+                <td>Class 2</td>
+                <td>Sangre de Cristo</td>
+                <td><a href="nav-pages/peaks/challenger-point.html">More Info</a></td>
+              </tr>
+              <tr>
+                <td>Mount Columbia</td>
+                <td>14,073'</td>
+                <td>Class 2</td>
+                <td>Sawatch</td>
+                <td><a href="nav-pages/peaks/mount-columbia.html">More Info</a></td>
+              </tr>
+              <tr>
+                <td>Missouri Mountain</td>
+                <td>14,067'</td>
+                <td>Class 2</td>
+                <td>Sawatch</td>
+                <td><a href="nav-pages/peaks/missouri-mountain.html">More Info</a></td>
+              </tr>
+              <tr>
+                <td>Humboldt Peak</td>
+                <td>14,064'</td>
+                <td>Class 2</td>
+                <td>Sangre de Cristo</td>
+                <td><a href="nav-pages/peaks/humboldt-peak.html">More Info</a></td>
+              </tr>
+              <tr>
+                <td>Mount Bierstadt</td>
+                <td>14,065'</td>
+                <td>Class 2</td>
+                <td>Front</td>
+                <td><a href="nav-pages/peaks/mount-bierstadt.html">More Info</a></td>
+              </tr>
+              <tr>
+                <td>Conundrum Peak</td>
+                <td>14,060'</td>
+                <td>Class 2</td>
+                <td>Elk</td>
+                <td><a href="nav-pages/peaks/conundrum-peak.html">More Info</a></td>
+              </tr>
+              <tr>
+                <td>Sunlight Peak</td>
+                <td>14,059'</td>
+                <td>Class 4</td>
+                <td>San Juan</td>
+                <td><a href="nav-pages/peaks/sunlight-peak.html">More Info</a></td>
+              </tr>
+              <tr>
+                <td>Handies Peak</td>
+                <td>14,058'</td>
+                <td>Class 1</td>
+                <td>San Juan</td>
+                <td><a href="nav-pages/peaks/handies-peak.html">More Info</a></td>
+              </tr>
+              <tr>
+                <td>Culebra Peak</td>
+                <td>14,053'</td>
+                <td>Class 2</td>
+                <td>Sangre de Cristo</td>
+                <td><a href="nav-pages/peaks/culebra-peak.html">More Info</a></td>
+              </tr>
+              <tr>
+                <td>Ellingwood Point</td>
+                <td>14,048'</td>
+                <td>Class 3</td>
+                <td>Sangre de Cristo</td>
+                <td><a href="nav-pages/peaks/ellingwood-point.html">More Info</a></td>
+              </tr>
+              <tr>
+                <td>Mount Lindsey</td>
+                <td>14,042'</td>
+                <td>Class 3</td>
+                <td>Sangre de Cristo</td>
+                <td><a href="nav-pages/peaks/mount-lindsey.html">More Info</a></td>
+              </tr>
+              <tr>
+                <td>Little Bear Peak</td>
+                <td>14,037'</td>
+                <td>Class 4</td>
+                <td>Sangre de Cristo</td>
+                <td><a href="nav-pages/peaks/little-bear-peak.html">More Info</a></td>
+              </tr>
+              <tr>
+                <td>Mount Sherman</td>
+                <td>14,036'</td>
+                <td>Class 2</td>
+                <td>Tenmile-Mosquito</td>
+                <td><a href="nav-pages/peaks/mount-sherman.html">More Info</a></td>
+              </tr>
+              <tr>
+                <td>Redcloud Peak</td>
+                <td>14,034'</td>
+                <td>Class 2</td>
+                <td>San Juan</td>
+                <td><a href="nav-pages/peaks/redcloud-peak.html">More Info</a></td>
+              </tr>
+              <tr>
+                <td>Pyramid Peak</td>
+                <td>14,025'</td>
+                <td>Class 4</td>
+                <td>Elk</td>
+                <td><a href="nav-pages/peaks/pyramid-peak.html">More Info</a></td>
+              </tr>
+              <tr>
+                <td>Wilson Peak</td>
+                <td>14,023'</td>
+                <td>Class 3</td>
+                <td>San Juan</td>
+                <td><a href="nav-pages/peaks/wilson-peak.html">More Info</a></td>
+              </tr>
+              <tr>
+                <td>Wetterhorn Peak</td>
+                <td>14,015'</td>
+                <td>Class 3</td>
+                <td>San Juan</td>
+                <td><a href="nav-pages/peaks/wetterhorn-peak.html">More Info</a></td>
+              </tr>
+              <tr>
+                <td>North Maroon Peak</td>
+                <td>14,019'</td>
+                <td>Class 4</td>
+                <td>Elk</td>
+                <td><a href="nav-pages/peaks/north-maroon-peak.html">More Info</a></td>
+              </tr>
+              <tr>
+                <td>Mount of the Holy Cross</td>
+                <td>14,005'</td>
+                <td>Class 2</td>
+                <td>Sawatch</td>
+                <td><a href="nav-pages/peaks/mount-of-the-holy-cross.html">More Info</a></td>
+              </tr>
+              <tr>
+                <td>Huron Peak</td>
+                <td>14,003'</td>
+                <td>Class 2</td>
+                <td>Sawatch</td>
+                <td><a href="nav-pages/peaks/huron-peak.html">More Info</a></td>
+              </tr>
+              <tr>
+                <td>Sunshine Peak</td>
+                <td>14,001'</td>
+                <td>Class 2</td>
+                <td>San Juan</td>
+                <td><a href="nav-pages/peaks/sunshine-peak.html">More Info</a></
+                </tr>
+              </table>
+            
+         
+          <br /><br />
+        </section>
+        <footer>
+          <p>&copy; 2024 Colorado Fourteeners</p>
+        </footer>
+        
+        
+         </body>
+        </html>
+        
+        
